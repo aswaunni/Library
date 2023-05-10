@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js" async></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono">
+</head>
+<body>
+    <div id="header">Library</div>
+    <div id="library">
+        <div>
+            <button class="addbook btn" onclick="openForm()">+ Add Book</button>    
+        </div>
+        <div class="books">
+
+        </div>
+    </div>
+    <div id="popup">
+        <form id="addBookForm" onsubmit="event.preventDefault(); addNewBook();">
+            <h1>New Book</h1>
+
+            <div>
+                <input required placeholder="Name" type="text" id="name" name="name">
+            </div>
+            
+            <div>
+                <input required placeholder="Author" type="text" id="author" name="author">
+            </div>
+
+            <div>
+                <input required placeholder="Pages" type="number" id="pages" name="pages">
+            </div>
+
+            <div>
+                <label for="pages">Read Status </label>
+                <input type="checkbox" id="read" name="read">
+            </div>
+
+            <div id="error"></div>
+
+            <div>
+                <button type="submit" class="btn add">Add</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <div class="overlay" id="overlay"></div>
+</body>
+</html>
